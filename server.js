@@ -2,10 +2,13 @@ import express, { json, urlencoded } from "express";
 import { engine } from "express-handlebars";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const server = express();
-const PORT = 8080;
+const PORT = process.env.PORT;
+dotenv.config();
 //handlebars
 server.engine(
   "hbs",
